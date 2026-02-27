@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Task Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- Splash screen -->
+    <div class="splash" id="splash">
+      <div class="splash-logo">
+        <div class="splash-orbit"></div>
+        <span>TD</span>
+      </div>
+      <div class="splash-title">Daily Task Tracker</div>
+      <div class="splash-sub">Focus today, measure weekly progress.</div>
+      <div class="splash-credit">Designed by <span>Md Ehtesham</span></div>
+      <div class="splash-spinner"></div>
+    </div>
+
+    <!-- Main app container -->
+    <div class="app-container">
+
+<header class="app-header">
+  <div class="app-title-block">
+    <div class="app-title">Daily Tasks</div>
+    <div class="app-subtitle">Tap a date to manage your tasks</div>
+  </div>
+</header>
+
+
+      <!-- Screen 1: Calendar + Day tasks -->
+      <main class="screen active" id="screen-tasks">
+        <div class="tasks-wrapper">
+          <!-- Month + navigation -->
+          <div class="month-header">
+            <button class="month-nav-btn" id="prevMonthBtn">&#x25C0;</button>
+            <div class="month-title" id="monthTitle">Month YYYY</div>
+            <button class="month-nav-btn" id="nextMonthBtn">&#x25B6;</button>
+          </div>
+
+          <!-- Weekday row -->
+          <div class="weekdays-row">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+
+          <!-- Calendar grid -->
+          <div class="calendar-grid" id="calendarGrid">
+            <!-- days inserted by JS -->
+          </div>
+
+          <!-- Selected date + add task -->
+          <div class="day-panel">
+            <div class="day-panel-header">
+              <div>
+                <div class="day-panel-label">Selected day</div>
+                <div class="day-panel-date" id="selectedDateLabel">Date</div>
+              </div>
+              <button class="add-task-btn" id="addTaskBtn">+ Add task</button>
+            </div>
+
+            <!-- Task list -->
+            <div class="task-list" id="taskList">
+              <div class="empty-tasks" id="emptyTasksMsg">
+                No tasks for this day yet.
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Screen 3: Lock settings (placeholder for now) -->
+      <main class="screen" id="screen-lock">
+        <div class="placeholder-center">
+          Lock screen settings (PIN / pattern) will come here later.
+        </div>
+      </main>
+
+      <!-- Bottom navigation -->
+      <nav class="bottom-nav">
+        <div class="nav-item active" data-target="screen-tasks">
+          <div class="nav-icon">📅</div>
+          <div>Tasks</div>
+          <div class="nav-dot"></div>
+        </div>
+        <div class="nav-item" data-target="screen-lock">
+          <div class="nav-icon">🔒</div>
+          <div>Lock</div>
+          <div class="nav-dot"></div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="app.js"></script>
+</body>
+</html>
